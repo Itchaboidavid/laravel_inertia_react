@@ -17,7 +17,7 @@ const Login = () => {
         <h1 className='text-3xl text-slate-800'>Welcome to Pesbuk</h1>
         <small className='text-sm text-slate-600'>Sign in to continue</small>
         <form className='space-y-6 mt-10' onSubmit={handleLogin}>
-            <input className='block w-full px-3 py-2 border rounded-lg' type="email" name='email' id='email' placeholder='Email' value={data.email} onChange={e => setData('email', e.target.value)}/>
+            <input className={`block w-full px-3 py-2 border rounded-lg ${errors.email && 'ring-1 ring-red-500'}`} type="email" name='email' id='email' placeholder='Email' value={data.email} onChange={e => setData('email', e.target.value)}/>
             {errors.email && <div className='text-red-500 text-sm text-start'>{errors.email}</div>}
             <input className='block w-full px-3 py-2 border rounded-lg' type="password" name='password' id='password' placeholder='Password' value={data.password} onChange={e => setData('password', e.target.value)} />
             {errors.password && <div className='text-red-500 text-sm text-start'>{errors.password}</div>}
